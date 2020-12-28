@@ -10,7 +10,12 @@ class AddTodo extends Component {
           style={{ flex: '10', padding: '5px' }}
           placeholder='Add todo...'
         />
-        <input type='submit' value='submit' style={{ flex: '1' }} />
+        <input
+          type='submit'
+          value='submit'
+          className='btn'
+          style={{ flex: '1' }}
+        />
       </form>
     );
   }
