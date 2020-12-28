@@ -18,15 +18,19 @@ class App extends Component {
       {
         id: 3,
         title: 'Meeting with boss',
-        completed: true,
+        completed: false,
       },
     ],
+  };
+
+  markComplete = (e) => {
+    console.log('this app.js');
   };
 
   render() {
     return (
       <div className='App'>
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} markComplete={this.markComplete} />
       </div>
     );
   }
