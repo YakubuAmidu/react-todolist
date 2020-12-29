@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import './App.css';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
+import About from './components/pages/About';
 import uuid from 'uuid';
 
 class App extends Component {
@@ -61,6 +62,7 @@ class App extends Component {
           <div className='container'>
             <Header />
             <Route
+              exact
               path='/'
               render={(props) => (
                 <React.Fragment>
@@ -70,6 +72,7 @@ class App extends Component {
                     markComplete={this.markComplete}
                     delTodo={this.delTodo}
                   />
+                  <Route path='/about' component={About} />
                 </React.Fragment>
               )}
             />
