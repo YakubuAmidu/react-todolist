@@ -34,9 +34,13 @@ class App extends Component {
   };
 
   delTodo = (id) => {
-    this.setState({
-      todos: [...this.state.todos.filter((todo) => todo.id !== id)],
-    });
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then((res) =>
+        this.setState({
+          todos: [...this.state.todos.filter((todo) => todo.id !== id)],
+        })
+      );
   };
 
   addTodo = (title) => {
@@ -66,7 +70,7 @@ class App extends Component {
                     markComplete={this.markComplete}
                     delTodo={this.delTodo}
                   />
-                  <Route path='/about' component={About} />
+                  <Route exact path='/about' component={About} />
                 </React.Fragment>
               )}
             />
